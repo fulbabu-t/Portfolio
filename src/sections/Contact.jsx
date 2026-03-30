@@ -56,31 +56,41 @@ export default function Contact() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!validateForm()) return;
+  if (!validateForm()) return;
 
-    setStatus("sending");
+  setStatus("sending");
 
-    try {
-      await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        {
-          ...formData,
-          from_name: formData.name,
-          reply_to: formData.email,
-        },
-        PUBLIC_KEY
-      );
+  try {
+    await emailjs.send(
+      SERVICE_ID,
+      TEMPLATE_ID,
+      {
+        from_name: formData.name,
+        reply_to: formData.email,
+        service: formData.service,
+        budget: formData.budget,
+        idea: formData.idea,
+      },
+      PUBLIC_KEY
+    );
 
-      setStatus("success");
-      setFormData({name: "",email: "",service: "",budget: "",idea: ""});
-    } catch (error) {
-      console.error("EmailJS Error:", error);
-      setStatus("error");
-    }
-  };
+    setStatus("success");
+
+    setFormData({
+      name: "",
+      email: "",
+      service: "",
+      budget: "",
+      idea: "",
+    });
+
+  } catch (error) {
+    console.error("EmailJS Error:", error);
+    setStatus("error");
+  }
+ };
 
   return (
     <section
