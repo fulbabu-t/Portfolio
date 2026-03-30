@@ -2,10 +2,10 @@
 import React from "react";
 
 // Importing image assets for the testimonials section
-// import m1 from "../assets/m1.png"; // Male testimonial image 1
-// import m2 from "../assets/m2.png"; // Male testimonial image 2
-// import w1 from "../assets/w1.png"; // Female testimonial image 1
-// import w2 from "../assets/w2.png"; // Female testimonial image 2
+import m1 from "../assets/m1.png"; // Male testimonial image 1
+import m2 from "../assets/m2.png"; // Male testimonial image 2
+import w1 from "../assets/w1.png"; // Female testimonial image 1
+import w2 from "../assets/w2.png"; // Female testimonial image 2
 
 // Importing Framer Motion for smooth animations
 import { motion } from "framer-motion";
@@ -21,28 +21,28 @@ const testimonials = [
     role: "Software Engineer at HCL Technologies",
     review:
       "Gaurav is a visionary developer. His attention to detail and creativity blew us away. Our project was a massive success because of him.",
-    // image: m1, // Points to imported image
+    image: m1, // Points to imported image
   },
   {
     name: "Heather Forster",
     role: "UI/UX Designer at PixelWorks",
     review:
       "Working with Gaurav was an absolute pleasure. He brings design and code together like magic. Highly recommend him!",
-    // image: w1, // Points to imported image
+    image: w1, // Points to imported image
   },
   {
     name: "Amy Jacobsan",
     role: "Tech Manager at CodeEmpire",
     review:
       "From concept to execution, Gaurav handled everything flawlessly. His work ethic and innovation are unmatched.",
-    // image: m2, // Points to imported image
+    image: m2, // Points to imported image
   },
   {
     name: "Carry Smith",
     role: "CTO at Innovate Labs",
     review:
       "Gaurav transformed our outdated platform into something modern and powerful. His skills are world-class.",
-    // image: w2, // Points to imported image
+    image: w2, // Points to imported image
   },
 ];
 
